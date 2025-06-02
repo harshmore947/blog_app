@@ -4,6 +4,23 @@ A full-stack blog platform built with Next.js 14, featuring a modern UI, real-ti
 
 ![Blog App Banner](public/banner.png)
 
+## ✨ Screenshots
+
+### Article List with Interactive Features
+
+![Articles List](screenshots/Screenshot%202025-06-02%20174441.png)
+_Browse articles with like counts, comments, and category tags_
+
+### Single Article View
+
+![Article Detail](screenshots/Screenshot%202025-06-02%20174456.png)
+_Read articles with rich content and interactive features_
+
+### Comments and Social Interaction
+
+![Comments Section](screenshots/Screenshot%202025-06-02%20174525.png)
+_Engage with other readers through likes and comments_
+
 ## Features
 
 - 🔐 **Authentication & Authorization**
