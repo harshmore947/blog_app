@@ -152,8 +152,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [Prisma Documentation](https://www.prisma.io/docs)
 - [shadcn/ui Components](https://ui.shadcn.com)
 
-## Contact
-
-Your Name - [@yourtwitter](https://twitter.com/yourtwitter)
-
-Project Link: [https://github.com/yourusername/blog_app](https://github.com/yourusername/blog_app)
