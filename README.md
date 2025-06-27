@@ -2,7 +2,11 @@
 
 A full-stack blog platform built with Next.js 14, featuring a modern UI, real-time interactions, and a robust backend.
 
-![Blog App Banner](public/banner.png)
+## 🌐 Live Demo
+
+**[View Live Application](https://blog-app-52by.vercel.app/)**
+
+Experience the full functionality of the blog platform at the link above.
 
 ## ✨ Screenshots
 
@@ -55,7 +59,7 @@ _Engage with other readers through likes and comments_
 
 - **Frontend**
 
-  - Next.js 14 (App Router)
+  - Next.js 15 (App Router)
   - React
   - TypeScript
   - Tailwind CSS
@@ -66,7 +70,7 @@ _Engage with other readers through likes and comments_
 
   - Next.js API Routes
   - Prisma ORM
-  - PostgreSQL
+  - PostgreSQL (Neon)
   - Server Actions
 
 - **Authentication**
@@ -75,7 +79,7 @@ _Engage with other readers through likes and comments_
 
 - **Deployment**
   - Vercel (Frontend & API)
-  - Supabase (PostgreSQL)
+  - Neon (PostgreSQL)
 
 ## Getting Started
 
@@ -91,7 +95,7 @@ _Engage with other readers through likes and comments_
 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/blog_app.git
+git clone https://github.com/harshmore947/blog_app.git
 cd blog_app
 ```
 
