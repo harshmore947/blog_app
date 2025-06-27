@@ -1,15 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { useParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+
 import { Textarea } from "@/components/ui/textarea";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Heart, MessageCircle, Trash2, ArrowLeft } from "lucide-react";
@@ -157,11 +152,15 @@ export default function ArticlePage() {
 
         <article className="prose prose-gray dark:prose-invert max-w-none">
           {article.featureImage && (
-            <img
-              src={article.featureImage}
-              alt={article.title}
-              className="w-full aspect-video object-cover rounded-lg mb-8"
-            />
+            <div className="relative w-full aspect-video mb-8">
+              <Image
+                src={article.featureImage}
+                alt={article.title}
+                className="object-cover rounded-lg"
+                fill
+                priority
+              />
+            </div>
           )}
 
           <header className="mb-8 not-prose">

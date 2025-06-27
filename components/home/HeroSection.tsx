@@ -1,7 +1,6 @@
 import React from "react";
 import { Button } from "../ui/button";
-import { ArrowRight, LogIn } from "lucide-react";
-import { SignedIn, SignedOut, useUser } from "@clerk/nextjs";
+import { SignedIn, SignedOut } from "@clerk/nextjs";
 import Link from "next/link";
 
 function HeroSection() {
@@ -27,7 +26,7 @@ function HeroSection() {
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <SignedIn>
-              <Link href='/dashboard'>
+              <Link href="/dashboard">
                 <Button
                   size="lg"
                   className="group relative min-w-[160px] overflow-hidden rounded-full bg-white px-8 py-3 text-base font-semibold text-indigo-950 transition-all hover:scale-105"
@@ -40,13 +39,12 @@ function HeroSection() {
             </SignedIn>
             <SignedOut>
               <Button
-              size="lg"
+                size="lg"
                 variant="outline"
                 className="min-w-[160px] rounded-full border-gray-700 bg-transparent text-white hover:bg-white/10"
               >
                 <span className="relative z-10 flex items-center gap-2 text-white">
                   Connect
-                 
                 </span>
                 <div className="absolute inset-0 z-0 bg-gradient-to-r from-indigo-600 to-purple-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
               </Button>

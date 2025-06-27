@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -229,10 +230,12 @@ function ArticleCard({
         <div>
           {article.featureImage && (
             <div className="relative h-48 overflow-hidden">
-              <img
+              <Image
                 src={article.featureImage}
                 alt={article.title}
                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+                fill
+                priority
               />
               {article.category && (
                 <span className="absolute top-4 left-4 bg-black/75 text-white px-3 py-1 rounded-full text-xs">

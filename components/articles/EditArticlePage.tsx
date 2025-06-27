@@ -2,6 +2,7 @@
 
 import React, { FormEvent, startTransition, useActionState } from "react";
 import { useState } from "react";
+import Image from "next/image";
 // import ReactQuill from "react-quill-new";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Input } from "../ui/input";
@@ -16,7 +17,6 @@ import {
 import dynamic from "next/dynamic";
 import { Button } from "../ui/button";
 import "react-quill-new/dist/quill.snow.css";
-import { createArticle } from "@/action/create-article";
 import { Loader2 } from "lucide-react";
 import { Article } from "@/app/generated/prisma";
 import { editArticle } from "@/action/edit-article";
@@ -24,14 +24,17 @@ import { editArticle } from "@/action/edit-article";
 const ReactQuill = dynamic(() => import("react-quill-new"), { ssr: false });
 
 type EditArticleProps = {
-  article:Article
-}
+  article: Article;
+};
 
-function EditArticlePage({article}:EditArticleProps) {
+function EditArticlePage({ article }: EditArticleProps) {
   const [content, setContent] = useState(article.content);
-  const [formState, action, isPending] = useActionState(editArticle.bind(null,article.id), {
-    errors: {},
-  });
+  const [formState, action, isPending] = useActionState(
+    editArticle.bind(null, article.id),
+    {
+      errors: {},
+    }
+  );
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -66,7 +69,7 @@ function EditArticlePage({article}:EditArticleProps) {
             </div>
             <div className="space-y-2">
               <Label>Category</Label>
-              <SelectCategory article={article}/>
+              <SelectCategory article={article} />
               {formState.errors.category && (
                 <span className="text-red-600 text-sm">
                   {formState.errors.category}
@@ -83,7 +86,13 @@ function EditArticlePage({article}:EditArticleProps) {
               />
               {article.featureImage && (
                 <div>
-                  <img src={article.featureImage} alt="featured-image" className="w-48 h-32 objcet-cover rounded-md" />
+                  <Image
+                    src={article.featureImage}
+                    alt="featured-image"
+                    width={1920}
+                    height={1080}
+                    className="w-48 h-32 objcet-cover rounded-md"
+                  />
                 </div>
               )}
               {/* {formState.errors.featuredImage && (
@@ -94,7 +103,12 @@ function EditArticlePage({article}:EditArticleProps) {
             </div>
             <div className="space-y-2">
               <Label>Content</Label>
-              <ReactQuill theme="snow" defaultValue={article.content} value={content} onChange={setContent} />
+              <ReactQuill
+                theme="snow"
+                defaultValue={article.content}
+                value={content}
+                onChange={setContent}
+              />
               {formState.errors.content && (
                 <span className="text-red-600 text-sm">
                   {formState.errors.content}
@@ -122,7 +136,7 @@ function EditArticlePage({article}:EditArticleProps) {
 
 export default EditArticlePage;
 
-function SelectCategory({article}:EditArticleProps) {
+function SelectCategory({ article }: EditArticleProps) {
   return (
     <div>
       <Select name="category" defaultValue={article.category}>
