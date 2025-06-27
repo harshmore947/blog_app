@@ -18,7 +18,7 @@ import dynamic from "next/dynamic";
 import { Button } from "../ui/button";
 import "react-quill-new/dist/quill.snow.css";
 import { Loader2 } from "lucide-react";
-import { Article } from "@/app/generated/prisma";
+import { Article } from "@prisma/client";
 import { editArticle } from "@/action/edit-article";
 
 const ReactQuill = dynamic(() => import("react-quill-new"), { ssr: false });
